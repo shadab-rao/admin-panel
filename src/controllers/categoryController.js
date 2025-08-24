@@ -9,7 +9,7 @@ const categoryCreate = async (req, res) => {
   }
 
   try {
-    const exist = await categoryModel.findOne({ name,user: req.user.id });
+    const exist = await categoryModel.findOne({ name, user: req.user.id });
     if (exist) {
       return res.status(400).json({ msg: "Category already exists" });
     }
@@ -26,6 +26,7 @@ const categoryCreate = async (req, res) => {
         name: category.name,
         status: category.status,
       },
+      user: req.user.id,
     });
   } catch (error) {
     res.status(500).json({ msg: error.message });

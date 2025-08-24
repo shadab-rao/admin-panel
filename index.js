@@ -22,6 +22,7 @@ app.use("/category", require("./src/routes/categoryRoute"));
 app.use("/product", require("./src/routes/productRoutes"));
 app.use("/order", require("./src/routes/orderRoutes"));
 app.use("/cart", require("./src/routes/cartRoutes"));
+app.use("/reset", require("./src/routes/resetPassRoutes"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

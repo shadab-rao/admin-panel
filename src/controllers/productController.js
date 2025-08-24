@@ -39,7 +39,6 @@ const allProducts = async (req, res) => {
           localField: "category",
           foreignField: "_id",
           as: "category",
-          pipeline: [{ $project: { _id: 1, name: 1 } }],
         },
       },
       { $unwind: "$category" },
